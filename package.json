@@ -1,0 +1,19 @@
+{
+  "name": "bababa",
+  "version": "1.0.0",
+  "description": "这是一个bababa小魔仙",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beifangyunanfang/baidu-ztc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beifangyunanfang/baidu-ztc/issues"
+  },
+  "homepage": "https://github.com/beifangyunanfang/baidu-ztc#readme"
+}
