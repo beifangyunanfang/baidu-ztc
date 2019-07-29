@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>React 模板</title>
-<link href="css/main_0da5ca4d46f65ff822ae.css" rel="stylesheet"></head>
+    <script>
+        if ('serviceWorker' in navigator) {  window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                console.log('SW registered: ', registration);
+            }).catch(registrationError => {
+                console.log('SW registration failed: ', registrationError);
+            });
+        });
+        }
+
+    </script>
+<link href="css/main_695c89a69eab05925b98.css" rel="stylesheet"></head>
 <body>
     <div id="root"></div>
-<script type="text/javascript" src="js/vender_e9e8f6e576e180484416.chunk.js"></script><script type="text/javascript" src="js/main_853f9a1eb7bd297d0d8e.js"></script></body>
+
+<script type="text/javascript" src="js/vender_2e6bc111389088ddb006.chunk.js"></script><script type="text/javascript" src="js/main_818a1e3a4d44cd930725.js"></script></body>
 </html>

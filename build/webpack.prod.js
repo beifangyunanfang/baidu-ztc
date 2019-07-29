@@ -6,6 +6,12 @@ const base = require('./webpack.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
+// 压缩css
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// 压缩js
+const TerserPlugin = require('terser-webpack-plugin');
+
+
 
 module.exports = merge({
     mode: 'production',
@@ -45,6 +51,19 @@ module.exports = merge({
             chunkFilename: 'css/[name]_[hash].chunk.css',
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    optimization: {
+        minimizer: [
+            new TerserPlugin({   // 压缩js代码
+                cache: true,   // 启用文件缓存
+                parallel: true,  // 使用多进程并行执行任务来提高构建效率
+                sourceMap: true,  // 将错误消息位置映射到模块
+                terserOptions: {
+                    drop_console: true,  // 打包时剔除所有console.log
+                    drop_debugger: true  // 打包时剔除所有debugger
+                }
+            }),
+            new OptimizeCSSAssetsPlugin({})]  // 压缩css代码
+    }
 
 }, base)
