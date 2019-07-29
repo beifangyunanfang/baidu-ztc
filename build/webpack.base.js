@@ -24,14 +24,18 @@ module.exports = {
                 use: [
                     "babel-loader",
                 ]
-            },
+            }
         ]
     },
     plugins: [
+
         new HtmlWebpackPlugin({
             template,
             filename: 'index.html'
         })
-    ]
+    ],
+    optimization: {
+        usedExports: true
+    }
 }
 
