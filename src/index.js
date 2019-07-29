@@ -2,11 +2,10 @@
  * Created by v_liukai01 on 2019/7/29.
  */
 
-import './styles/app.css'
+import './styles/app.less'
 
-let name = 'test';
-let say = val => {
-    alert(val)
-};
-say(name);
+import $ from 'jquery'
+
+
+console.log($('#root').html('hello world'));
 

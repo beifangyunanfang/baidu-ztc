@@ -16,7 +16,7 @@ module.exports = merge({
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.(css|less)$/,
                 use: [  // loader解析的顺序是从下到上，从右到左的顺序
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -33,6 +33,7 @@ module.exports = merge({
                             importLoaders: 2   //该方式可以让@import引入的css文件再次执行一边css打包loader
                         }
                     },
+                    'less-loader'
                 ]
             }
         ]
