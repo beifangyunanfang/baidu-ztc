@@ -2,12 +2,16 @@
  * Created by v_liukai01 on 2019/7/29.
  */
 // webpack.dev.js
+const path = require('path');
 const base = require('./webpack.base');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 module.exports = merge({
     mode: 'development',
+    entry:[
+        'react-hot-loader/patch'
+    ],
     output: {
         filename: '[name].js',
         chunkFilename: '[name].js',
@@ -34,7 +38,7 @@ module.exports = merge({
         port: '8081',
         // 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html
         historyApiFallback: true, // 解决单页面路由问题，
-        contentBase: '../dist',
+        contentBase: path.join(__dirname, '../dist'),
         open: true,  //自动打开浏览器
         hot: true,  // 开启热替换, css代码跟新不刷新页面
         // hotOnly: true 开启后只有手动配置才能更新，即使hot为true也不刷新浏览器

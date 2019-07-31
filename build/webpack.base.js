@@ -17,12 +17,21 @@ module.exports = {
     module: {
         rules: [
             // 将es6编译成es5
+            // {
+            //     test: /\.jsx?$/,   // ?表示x有0个或一个
+            //     exclude: /node_modules/,  // 不编译某个目录下的文件
+            //     include: path.resolve(__dirname, '../src'),  // 只在include包含的目录下进行loader编译
+            //     use: [
+            //         "babel-loader?cacheDirectory",  // 缓存loader执行结果
+            //     ]
+            // },
+            // 将es6编译成es5
             {
                 test: /\.jsx?$/,   // ?表示x有0个或一个
                 exclude: /node_modules/,  // 不编译某个目录下的文件
                 include: path.resolve(__dirname, '../src'),  // 只在include包含的目录下进行loader编译
                 use: [
-                    "babel-loader",
+                    "babel-loader"
                 ]
             },
             // 加载解析文件资源
